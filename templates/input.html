@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<body>
+<h1 align='center'> SOLAR PANEL FAULT PREDICTION</h1>
+<form action="/" method="POST" enctype="multipart/form-data">
+	<div class='data' align="center">
+        Ipv: <input name="Ipv" multiple type="field" placeholder="PV array current measurement."/>&nbsp &nbsp
+        Vpv: <input name="Vpv" multiple type="field" placeholder="  PV array voltage measurement."/><br><br>
+        Vdc:  <input name="Vdc" multiple type="field" placeholder=" DC voltage measurement."/>&nbsp &nbsp
+        ia: <input name="ia" multiple type="field" placeholder=" Phase_A current measurement. "/><br><br>
+        ib: <input align="right" name="ib" multiple type="field" placeholder="Phase_B current measurement."/>&nbsp &nbsp
+        ic: <input name="ic" multiple type="field" placeholder="Phase_C current measurement."/><br><br>
+        va:<input name="va" multiple type="field" placeholder=" Phase_A voltage measurement"/>&nbsp &nbsp
+        vb: <input name="vb" multiple type="field" placeholder="Phase_B voltage measurement"/><br><br>
+        vc: <input name="vc" multiple type="field" placeholder="Phase_C voltage measurement"/>&nbsp &nbsp
+        Iabc: <input name="Iabc" multiple type="field" placeholder="Positive-sequence estimated current magnitude."/><br><br>
+        If: <input name="If" multiple type="field" placeholder="Positive-sequence estimated current frequency."/>&nbsp &nbsp
+        Vabc: <input name="Vabc" multiple type="field" placeholder="Positive-sequence estimated voltage magnitude."/><br><br>
+        Vf: <input name="Vf" multiple type="field" placeholder="Positive-sequence estimated vurrent frequency."/><br><br>
+        <input type="hidden" id="hd" value>
+        <input id="predict" type="submit" value="predict">
+        <br><br>
+        
+Please Upload Small_File: <input type="file" id="myFile" name="filename" accept='.csv'>
+                          <input type="submit" value="Upload">
+    </div>
+  </form>
+<br>
+<style>
+    iframe {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<p class="result" align="center"
+  <script>
+    <iframe src="data:text/html;charset=utf-8,{{ result_table }}" width="960" height="200"></iframe>
+  </script> 
+</p>     
+             <h1 align="center">{{note}}</h1>                   
+</body>
+</head>
+<html>
+
+   
